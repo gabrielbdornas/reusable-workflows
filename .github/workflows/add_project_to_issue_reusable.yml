@@ -1,4 +1,4 @@
-name: Add project to issues
+name: Add project to issue
 
 on:
   workflow_call:
