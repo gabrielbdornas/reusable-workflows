@@ -1,9 +1,6 @@
 # This uses a reusable workflow
 name: Reusable Workflow to add a project to issues
 
-# This uses a reusable workflow
-name: Reusable Workflow to add a project to issues
-
 on:
   issues:
     types: [opened]
