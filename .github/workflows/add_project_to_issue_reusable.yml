@@ -6,8 +6,11 @@ on:
       GH_TOKEN:
         description: 'A token passed from the caller workflow'
         required: true
-      PROJECT_URL:
-        description: 'A active GitHub project link'
+      USER:
+        description: 'A github user to what a project will be selected'
+        required: true
+      PROJECT_NUMBER:
+        description: 'A GitHub project number of the given user that will be updated'
         required: true
 
 jobs:
@@ -17,5 +20,5 @@ jobs:
     steps:
       - uses: actions/add-to-project@v0.4.0
         with:
-          project-url: ${{ secrets.PROJECT_URL }}
+          project-url: "https://github.com/users/${{ secrets.USER }}/projects/${{ secrets.PROJECT_NUMBER }}"
           github-token: ${{ secrets.GH_TOKEN }}

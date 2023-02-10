@@ -13,9 +13,10 @@ When a reusable workfows is created its documentation must be added below and th
 
 The following configurations must be done in the repo that will call this reusable workflow:
 
-- GitHub secrets as explained [here](https://github.com/actions/add-to-project#inputs):
-  - PROJECT_URL; and
-  - GITHUB_TOKEN.
+- GitHub secrets:
+  - USER;
+  - PROJECT_NUMBER; and
+  - GITHUB_TOKEN, as explained [here](https://github.com/actions/add-to-project#inputs).
 
 - Create the file `.github/workflow/add_project_to_issue.yml` with the content below:
 
@@ -31,8 +32,9 @@ jobs:
   do-it:
     uses: gabrielbdornas/reusable-workflows/.github/workflows/add_project_to_issue_reusable.yml@main
     secrets:
-        PROJECT_URL: ${{ secrets.PROJECT_URL }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        USER: ${{ secrets.USER }}
+        PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
 ```
 
 ## Add duo date to closed issue

@@ -7,7 +7,8 @@ on:
 
 jobs:
   do-it:
-    uses: ./.github/workflows/add_project_to_issue_reusable.yml
+    uses: gabrielbdornas/reusable-workflows/.github/workflows/add_project_to_issue_reusable.yml@main
     secrets:
-        PROJECT_URL: "https://github.com/users/${{ secrets.USER }}/projects/${{ secrets.PROJECT_NUMBER }}"
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        USER: ${{ secrets.USER }}
+        PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
