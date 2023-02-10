@@ -34,3 +34,33 @@ jobs:
         PROJECT_URL: ${{ secrets.PROJECT_URL }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
 ```
+
+## Add duo date to closed issue
+
+[This reusable workflos](https://github.com/gabrielbdornas/reusable-workflows/blob/main/.github/workflows/set_due_date_to_closed_issue.yml) was created to automate the process of set duo date to closed issues linked to a GitHub project.
+
+The following configurations must be done in the repo that will call this reusable workflow:
+
+- GitHub secrets:
+  - GITHUB_TOKEN;
+  - USER; and
+  - PROJECT_NUMBER.
+
+- Create the file `.github/workflow/set_due_date_to_closed_issue.yml` with the content below:
+
+```
+# This uses a reusable workflow
+name: Reusable Workflow to set due date to closed issue
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  do-it:
+    uses: gabrielbdornas/reusable-workflows/.github/workflows/set_due_date_to_closed_issue.yml@main
+    secrets:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        USER: ${{ secrets.USER }}
+        PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
+```
