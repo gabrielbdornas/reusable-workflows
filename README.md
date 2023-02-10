@@ -4,13 +4,13 @@ Set of reusable workflows, as proposed in [this video](https://www.youtube.com/w
 
 ## Add project to issues
 
-[This reusable workflos](https://github.com/gabrielbdornas/reusable-workflows/blob/main/.github/workflows/add_project_to_issue.yml) was created to automate the process of vinculate a project to a new issue.
+[This reusable workflos](https://github.com/gabrielbdornas/reusable-workflows/blob/main/.github/workflows/add_project_to_issue.yml) was created to automate the process of vinculate [a project to a new issue](https://github.com/actions/add-to-project).
 
 The following configurations must be done in the repo that will call this reusable workflow:
 
 - GitHub secrets
-  - PROJECT_URL
-  - GITHUB_TOKEN
+  - PROJECT_URL; and
+  - GITHUB_TOKEN, as explained [here](https://github.com/actions/add-to-project#inputs).
 
 - Create the file `.github/workflow/add_project_to_issue.yml` with the content below:
 
