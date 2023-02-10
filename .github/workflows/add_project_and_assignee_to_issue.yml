@@ -9,11 +9,8 @@ jobs:
   do-it:
     steps:
       uses: ./.github/workflows/add_project_to_issue_reusable.yml
+      uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
       secrets:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           USER: ${{ secrets.USER }}
           PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
-
-      uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
-      secrets:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
