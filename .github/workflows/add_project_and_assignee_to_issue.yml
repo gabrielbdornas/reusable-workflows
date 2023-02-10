@@ -13,6 +13,7 @@ jobs:
         USER: ${{ secrets.USER }}
         PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
 
+  do-it:  
     uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
     secrets:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
