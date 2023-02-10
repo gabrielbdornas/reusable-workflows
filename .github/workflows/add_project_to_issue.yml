@@ -1,21 +1,13 @@
-name: Add project to issues
+# This uses a reusable workflow
+name: Reusable Workflow to add a project to issues
 
 on:
-  workflow_call:
-    secrets:
-      GH_TOKEN:
-        description: 'A token passed from the caller workflow'
-        required: true
-      PROJECT_URL:
-        description: 'A active GitHub project link'
-        required: true
+  issues:
+    types: [opened]
 
 jobs:
-  add-to-project:
-    name: Add project to issue
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/add-to-project@v0.4.0
-        with:
-          project-url: ${{ secrets.PROJECT_URL }}
-          github-token: ${{ secrets.GH_TOKEN }}
+  do-it:
+    uses: ./.github/workflows/add_project_to_issue_reusable.yml@main
+    secrets:
+        PROJECT_URL: ${{ secrets.PROJECT_URL }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
