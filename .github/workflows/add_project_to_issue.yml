@@ -1,7 +1,14 @@
 name: Add project to issues
 
 on:
-  workflow_call
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        description: 'A token passed from the caller workflow'
+        required: true
+      PROJECT_URL:
+        description: 'A active GitHub project link'
+        required: true
 
 jobs:
   add-to-project:
@@ -11,4 +18,4 @@ jobs:
       - uses: actions/add-to-project@v0.4.0
         with:
           project-url: ${{ secrets.PROJECT_URL }}
-          github-token: ${{ secrets.ACTIONS_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}

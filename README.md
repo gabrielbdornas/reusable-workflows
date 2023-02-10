@@ -27,5 +27,5 @@ jobs:
     uses: gabrielbdornas/reusable-workflows/.github/workflows/add_project_to_issue.yml@main
     secrets:
         PROJECT_URL: ${{ secrets.PROJECT_URL }}
-        ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
 ```
