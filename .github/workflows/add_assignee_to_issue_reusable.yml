@@ -6,6 +6,9 @@ on:
       GH_TOKEN:
         description: 'A token passed from the caller workflow'
         required: true
+      USER:
+        description: 'A github user to what a project will be selected'
+        required: true
 
 jobs:
   add-assignee-to-issue:
@@ -15,4 +18,5 @@ jobs:
       - uses: pozil/auto-assign-issue@v1
         with:
           repo-token: ${{ secrets.GH_TOKEN }}
-          allowSelfAssign: true
+          assignees: ${{ secrets.USER }}
+          numOfAssignee: 1

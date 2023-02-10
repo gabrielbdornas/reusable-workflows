@@ -10,3 +10,4 @@ jobs:
     uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
     secrets:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        USER: ${{ secrets.USER }}
