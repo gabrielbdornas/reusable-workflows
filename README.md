@@ -26,6 +26,6 @@ jobs:
   do-it:
     uses: gabrielbdornas/reusable-workflows/.github/workflows/add_project_to_issue.yml@main
     secrets:
-        project-url: ${{ secrets.PROJECT_URL }}
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        PROJECT_URL: ${{ secrets.PROJECT_URL }}
+        ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
 ```
