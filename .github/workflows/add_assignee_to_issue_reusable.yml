@@ -1,0 +1,18 @@
+name: Add assignee to issue
+
+on:
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        description: 'A token passed from the caller workflow'
+        required: true
+
+jobs:
+  add-assignee-to-issue:
+    name: Add assignee to issue
+    runs-on: ubuntu-latest
+    steps:
+      - uses: pozil/auto-assign-issue@v1
+        with:
+          repo-token: ${{ secrets.GH_TOKEN }}
+          allowSelfAssign: true
