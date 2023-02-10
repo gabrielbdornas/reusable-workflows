@@ -37,6 +37,32 @@ jobs:
         PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
 ```
 
+## Add assignee to issue
+
+[This reusable workflos](https://github.com/gabrielbdornas/reusable-workflows/blob/main/.github/workflows/add_assignee_to_issue_reusable.yml) was created to automate the process of [set assignee to a GitHub issue](https://github.com/marketplace/actions/auto-assign-issue). It'll link the issue's creator as assignee.
+
+The following configurations must be done in the repo that will call this reusable workflow:
+
+- GitHub secrets:
+  - GITHUB_TOKEN
+
+- Create the file `.github/workflow/add_assignee_to_issue_reusable.yml` with the content below:
+
+```
+# This uses a reusable workflow
+name: Reusable Workflow to add a assignee to issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  do-it:
+    uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
+    secrets:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+```
+
 ## Add duo date to closed issue
 
 [This reusable workflos](https://github.com/gabrielbdornas/reusable-workflows/blob/main/.github/workflows/set_due_date_to_closed_issue_reusable.yml) was created to automate the process of set duo date to closed issues linked to a GitHub project.
@@ -65,30 +91,4 @@ jobs:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         USER: ${{ secrets.USER }}
         PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
-```
-
-## Add assignee to issue
-
-[This reusable workflos](https://github.com/gabrielbdornas/reusable-workflows/blob/main/.github/workflows/add_assignee_to_issue_reusable.yml) was created to automate the process of set assignee to a GitHub issue. It'll link the issue's creator as assignee.
-
-The following configurations must be done in the repo that will call this reusable workflow:
-
-- GitHub secrets:
-  - GITHUB_TOKEN
-
-- Create the file `.github/workflow/add_assignee_to_issue_reusable.yml` with the content below:
-
-```
-# This uses a reusable workflow
-name: Reusable Workflow to add a assignee to issues
-
-on:
-  issues:
-    types: [opened]
-
-jobs:
-  do-it:
-    uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
-    secrets:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
 ```
