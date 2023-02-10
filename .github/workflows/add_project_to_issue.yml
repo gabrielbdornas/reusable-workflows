@@ -9,5 +9,5 @@ jobs:
   do-it:
     uses: ./.github/workflows/add_project_to_issue_reusable.yml
     secrets:
-        PROJECT_URL: ${{ secrets.PROJECT_URL }}
+        PROJECT_URL: "https://github.com/users/${{ secrets.USER }}/projects/${{ secrets.PROJECT_NUMBER }}"
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
