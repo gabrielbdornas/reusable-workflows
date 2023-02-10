@@ -1,6 +1,11 @@
 # Reusable Workflows
 
-Set of reusable workflows, as proposed in [this video](https://www.youtube.com/watch?v=lRypYtmbKMs).
+Set of reusable workflows, as proposed in these YouTube videos:
+
+- [GitHub Actions Reusable Workflows FULL TUTORIAL with Examples: Templates on Steroids](https://www.youtube.com/watch?v=lRypYtmbKMs)
+- [GitHub Actions - Calling Reusable Workflows](https://www.youtube.com/watch?v=2dxmvDL1gP8)
+
+When a reusable workfows is created its documentation must be added below and the secrets must be well designed to avoid ["invalid secret, is not defined in the referenced workflow"](https://github.com/orgs/community/discussions/26749).
 
 ## Add project to issues
 
