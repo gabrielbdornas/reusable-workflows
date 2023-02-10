@@ -44,9 +44,9 @@ jobs:
 The following configurations must be done in the repo that will call this reusable workflow:
 
 - GitHub secrets:
-  - GITHUB_TOKEN;
-  - USER; and
-  - PROJECT_NUMBER.
+  - USER;
+  - PROJECT_NUMBER; and
+  - GITHUB_TOKEN
 
 - Create the file `.github/workflow/set_due_date_to_closed_issue.yml` with the content below:
 
