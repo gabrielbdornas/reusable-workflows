@@ -7,14 +7,13 @@ on:
 
 jobs:
   do-it:
-    uses: ./.github/workflows/add_project_to_issue_reusable.yml
-    secrets:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        USER: ${{ secrets.USER }}
-        PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
+    steps:
+      uses: ./.github/workflows/add_project_to_issue_reusable.yml
+      secrets:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          USER: ${{ secrets.USER }}
+          PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
 
-jobs:
-  do-it:  
-    uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
-    secrets:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      uses: ./.github/workflows/add_assignee_to_issue_reusable.yml
+      secrets:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
