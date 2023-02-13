@@ -14,9 +14,10 @@ When a reusable workfows is created its documentation must be added below and th
 The following configurations must be done in the repo that will call this reusable workflow:
 
 - GitHub secrets:
-  - USER;
-  - PROJECT_NUMBER; and
   - GITHUB_TOKEN, as explained [here](https://github.com/actions/add-to-project#inputs).
+  - USER;
+  - TYPE - `users` or `orgs`; and
+  - PROJECT_NUMBER; and
 
 - Create the file `.github/workflow/add_project_to_issue.yml` with the content below:
 
@@ -34,6 +35,7 @@ jobs:
     secrets:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
         USER: ${{ secrets.USER }}
+        TYPE: ${{ secrets.TYPE }}
         PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER }}
 ```
 
