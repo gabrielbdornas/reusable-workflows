@@ -1,4 +1,4 @@
-name: Set due date to closed issue
+name: Set due date to users closed issue
 
 on:
   workflow_call:
@@ -14,8 +14,8 @@ on:
         required: true
 
 jobs:
-  set-duo-date-to-closed-issue:
-    name: Set duo date to closed issue
+  set-duo-date-to-users-closed-issue:
+    name: Set duo date to users closed issue
     runs-on: ubuntu-latest
     steps:
       - name: Get project data
