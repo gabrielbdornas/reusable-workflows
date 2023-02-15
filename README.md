@@ -14,7 +14,7 @@ When a reusable workfows is created its documentation must be added below and th
 The following configurations must be done in the repo that will call this reusable workflow:
 
 - GitHub secrets:
-  - GITHUB_TOKEN, as explained [here](https://github.com/actions/add-to-project#inputs).
+  - GH_TOKEN, as explained [here](https://github.com/actions/add-to-project#inputs).
   - USER;
   - TYPE - `users` or `orgs`; and
   - PROJECT_NUMBER; and
@@ -46,7 +46,7 @@ jobs:
 The following configurations must be done in the repo that will call this reusable workflow:
 
 - GitHub secrets:
-  - GITHUB_TOKEN
+  - GH_TOKEN
 
 - Create the file `.github/workflow/add_assignee_to_issue_reusable.yml` with the content below:
 
@@ -74,7 +74,7 @@ The following configurations must be done in the repo that will call this reusab
 - GitHub secrets:
   - USER;
   - PROJECT_NUMBER; and
-  - GITHUB_TOKEN
+  - GH_TOKEN
 
 - Create the file `.github/workflow/set_due_date_to_users_closed_issue.yml` with the content below:
 
@@ -104,7 +104,7 @@ The following configurations must be done in the repo that will call this reusab
 - GitHub secrets:
   - USER;
   - PROJECT_NUMBER; and
-  - GITHUB_TOKEN
+  - GH_TOKEN
 
 - Create the file `.github/workflow/set_due_date_to_orgs_closed_issue.yml` with the content below:
 
